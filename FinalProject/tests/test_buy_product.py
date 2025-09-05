@@ -11,7 +11,7 @@ def test_1(set_up, set_group): #тест с выбором города и от�
     options.add_experimental_option("detach", True)
     driver = webdriver.Chrome(options=options, service=ChromeService(ChromeDriverManager().install()))
 
-    print("Start full test")
+    print("Start test")
 
     city = City_Page(driver)
     city.city_choice()
@@ -19,7 +19,7 @@ def test_1(set_up, set_group): #тест с выбором города и от�
     selection = Product_Find(driver)
     selection.product_criteria()
 
-    print("End full test")
+    print("End test")
     driver.quit()
 
 def test_2(set_up, set_group): #тест с отбором товара по критериям и заказом товара
