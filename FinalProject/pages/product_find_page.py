@@ -13,7 +13,8 @@ class Product_Find(Base):
     url = 'https://1click.ru/catalogue/phones/'
 
     """Поиск продукта по фильтрам"""
-    # Locators - локаторы элементов
+
+    # Locators - локаторы элементов, которые находятся на главной странице
     catalog_items = "//div[@class='header__bottom-catalog']"
     smart_category = "(//div[@data-id='29'])[1]"
     available_only = "//label[@for='AVAILABLE']"
@@ -178,7 +179,7 @@ class Product_Find(Base):
         time.sleep(1)
         print("Клик по кнопке применения фильтров")
 
-    # Methods - метод, содержащий список Actions, представленных в виде действий данном случае осуществляется выбор товара по критериям
+    # Methods - метод, содержащий список Actions, представленных в виде действий данном случае осуществляется выбор города
     def product_criteria(self):
         with allure.step("Product criteria"):
             Logger.add_start_step(method="product_criteria")
@@ -203,5 +204,3 @@ class Product_Find(Base):
             self.click_get_accept_all()
             self.asset_word(self.get_verification_word(), "Смартфоны в Москве") #проверка на ключевую фразу
             Logger.add_end_step(url=self.driver.current_url, method="product_criteria")
-
-

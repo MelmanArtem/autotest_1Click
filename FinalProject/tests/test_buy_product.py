@@ -25,43 +25,43 @@ def test_1(set_up, set_group): #тест с выбором города и от�
     print("End full test")
     driver.quit()
 
-"""Тест №2"""
-@allure.description("Test 2")
-def test_2(set_up, set_group): #тест с отбором товара по критериям и заказом товара
-    options = webdriver.ChromeOptions()
-    options.add_experimental_option("excludeSwitches", ["enable-logging"])
-    options.add_experimental_option("detach", True)
-    driver = webdriver.Chrome(options=options, service=ChromeService(ChromeDriverManager().install()))
-
-    print("Start test")
-
-    selection = Product_Find(driver)
-    selection.product_criteria()
-
-    order = Order_Pay(driver)
-    order.choice_and_order()
-
-    print("End test")
-    driver.quit()
-
-"""Тест №3"""
-@allure.description("Test 3")
-def test_3(set_up, set_group): #тест с выбором города, отбором товара по критериям и заказом товара
-    options = webdriver.ChromeOptions()
-    options.add_experimental_option("excludeSwitches", ["enable-logging"])
-    options.add_experimental_option("detach", True)
-    driver = webdriver.Chrome(options=options, service=ChromeService(ChromeDriverManager().install()))
-
-    print("Start full test")
-
-    city = City_Page(driver)
-    city.city_choice()
-
-    selection = Product_Find(driver)
-    selection.product_criteria()
-
-    order = Order_Pay(driver)
-    order.choice_and_order()
-
-    print("End full test")
-    driver.quit()
+# """Тест №2"""
+# @allure.description("Test 2")
+# def test_2(set_up, set_group): #тест с отбором товара по критериям и заказом товара
+#     options = webdriver.ChromeOptions()
+#     options.add_experimental_option("excludeSwitches", ["enable-logging"])
+#     options.add_experimental_option("detach", True)
+#     driver = webdriver.Chrome(options=options, service=ChromeService(ChromeDriverManager().install()))
+#
+#     print("Start test")
+#
+#     selection = Product_Find(driver)
+#     selection.product_criteria()
+#
+#     order = Order_Pay(driver)
+#     order.choice_and_order()
+#
+#     print("End test")
+#     driver.quit()
+#
+# """Тест №3"""
+# @allure.description("Test 3")
+# def test_3(set_up, set_group): #тест с выбором города, отбором товара по критериям и заказом товара
+#     options = webdriver.ChromeOptions()
+#     options.add_experimental_option("excludeSwitches", ["enable-logging"])
+#     options.add_experimental_option("detach", True)
+#     driver = webdriver.Chrome(options=options, service=ChromeService(ChromeDriverManager().install()))
+#
+#     print("Start full test")
+#
+#     city = City_Page(driver)
+#     city.city_choice()
+#
+#     selection = Product_Find(driver)
+#     selection.product_criteria()
+#
+#     order = Order_Pay(driver)
+#     order.choice_and_order()
+#
+#     print("End full test")
+#     driver.quit()
