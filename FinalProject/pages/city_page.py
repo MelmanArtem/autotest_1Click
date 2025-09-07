@@ -13,7 +13,7 @@ class City_Page(Base):
 
     """Выбор города"""
 
-    # Locators - локаторы элементов
+    # Locators - локаторы элементов, которые находятся на главной странице
     choice_city = "//a[@class='header__top-city-link js-city']"
     city_name = "//input[@class='form-control js-city-selector-input']"
     confirmation_city = "//a[@class='item js-set-city']"
