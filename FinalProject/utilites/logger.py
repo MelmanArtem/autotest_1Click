@@ -7,7 +7,7 @@ class Logger():
 
     @classmethod
     def write_log_to_file(cls, data: str):
-        with open(cls.file_name, 'a', encoding='utf=8') as logger_file:
+        with open(cls.file_name, 'a', encoding='utf-8') as logger_file:
             logger_file.write(data)
 
     @classmethod
