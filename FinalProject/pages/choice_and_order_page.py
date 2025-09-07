@@ -10,8 +10,7 @@ from utilites.logger import Logger
 class Order_Pay(Base):
 
     """Выбор продукта и заказ"""
-
-    # Locators - локаторы элементов, которые находятся на главной странице
+    # Locators - локаторы элементов
     dropdown = "//*[@id='content']/main/div[2]/div[2]/div[2]/div[1]/div/span"
     cheap_at_first = "(//a[@class='ui-dropdown__item'])[5]"
     buy_button = "(//button[@class='product__buy-basket'])[7]"
@@ -54,7 +53,7 @@ class Order_Pay(Base):
     def get_verification_word(self):
         return WebDriverWait(self.driver, 10).until(expected_conditions.element_to_be_clickable((By.XPATH, self.verification_word)))
 
-    # Actions - методы, которые будут принимать результат поиска от Getters и производить требуемой действие, например кликать или вводить требуемую информацию.
+    # Actions - методы, которые будут принимать результат поиска от Getters и производить требуемой действие
     def click_dropdown(self):
         self.get_dropdown().click()
         time.sleep(1)
@@ -99,7 +98,7 @@ class Order_Pay(Base):
         time.sleep(1)
         print("Оформление заказа")
 
-    # Methods - метод, содержащий список Actions, представленных в виде действий данном случае осуществляется выбор города
+    # Methods - метод, содержащий список Actions, представленных в виде действий данном случае осуществляется выбор товара и заказ
     def choice_and_order(self):
         with allure.step("Choice and order"):
             Logger.add_start_step(method="choice_and_order")
