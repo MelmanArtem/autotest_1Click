@@ -4,7 +4,7 @@ import time
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from base.base_class import Base
-
+from utilites.logger import Logger
 
 
 class Product_Find(Base):
@@ -184,6 +184,7 @@ class Product_Find(Base):
 
     # Methods - метод, содержащий список Actions, представленных в виде действий данном случае осуществляется выбор города
     def product_criteria(self):
+        Logger.add_start_step(method="product_criteria")
         self.driver.get(self.url)
         self.driver.maximize_window()
         self.click_catalog()
@@ -203,6 +204,7 @@ class Product_Find(Base):
         self.click_get_nfc()
         self.click_get_nfc_yes()
         self.click_get_accept_all()
-        self.asset_word(self.get_verification_word(), "Смартфоны в Москве") #проверка на ключевую фразу
+        self.asset_word(self.get_verification_word(), "Смартфоны в Москве")  # проверка на ключевую фразу
+        Logger.add_end_step(url=self.driver.current_url, method="product_criteria")
 
 

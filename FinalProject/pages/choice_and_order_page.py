@@ -3,6 +3,7 @@ import time
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from base.base_class import Base
+from utilites.logger import Logger
 
 class Order_Pay(Base):
 
@@ -102,6 +103,7 @@ class Order_Pay(Base):
 
     # Methods - метод, содержащий список Actions, представленных в виде действий данном случае осуществляется выбор города
     def choice_and_order(self):
+        Logger.add_start_step(method="choice_and_order")
         self.click_dropdown()
         self.click_cheap_at_first()
         self.click_buy_button()
@@ -112,5 +114,6 @@ class Order_Pay(Base):
         self.input_number()
         self.input_email()
         self.input_submit_order()
-        self.asset_word(self.get_verification_word(), "Google Pixel 9a 8/128Gb Peony (JP) Sim+eSim") #проверка на ключевую фразу
-        self.get_screenshot() #скрин заказа
+        self.asset_word(self.get_verification_word(),"Google Pixel 9a 8/128Gb Peony (JP) Sim+eSim")  # проверка на ключевую фразу
+        self.get_screenshot()  # скрин заказа
+        Logger.add_end_step(url=self.driver.current_url, method="choice_and_order")
