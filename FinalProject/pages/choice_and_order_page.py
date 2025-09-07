@@ -5,8 +5,6 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from base.base_class import Base
 from utilites.logger import Logger
-
-
 class Order_Pay(Base):
 
     def __init__(self, driver):
