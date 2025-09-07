@@ -1,3 +1,4 @@
+import allure
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
@@ -5,13 +6,14 @@ from pages.city_page import City_Page
 from pages.product_find_page import Product_Find
 from pages.choice_and_order_page import Order_Pay
 
+@allure.description("Test 1")
 def test_1(set_up, set_group): #тест с выбором города и отбором товара по критериям
     options = webdriver.ChromeOptions()
     options.add_experimental_option("excludeSwitches", ["enable-logging"])
     options.add_experimental_option("detach", True)
     driver = webdriver.Chrome(options=options, service=ChromeService(ChromeDriverManager().install()))
 
-    print("Start test")
+    print("Start full test")
 
     city = City_Page(driver)
     city.city_choice()
@@ -19,9 +21,10 @@ def test_1(set_up, set_group): #тест с выбором города и от�
     selection = Product_Find(driver)
     selection.product_criteria()
 
-    print("End test")
+    print("End full test")
     driver.quit()
 
+@allure.description("Test 2")
 def test_2(set_up, set_group): #тест с отбором товара по критериям и заказом товара
     options = webdriver.ChromeOptions()
     options.add_experimental_option("excludeSwitches", ["enable-logging"])
@@ -39,6 +42,7 @@ def test_2(set_up, set_group): #тест с отбором товара по к�
     print("End test")
     driver.quit()
 
+@allure.description("Test 3")
 def test_3(set_up, set_group): #тест с выбором города, отбором товара по критериям и заказом товара
     options = webdriver.ChromeOptions()
     options.add_experimental_option("excludeSwitches", ["enable-logging"])

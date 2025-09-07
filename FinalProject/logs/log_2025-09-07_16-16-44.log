@@ -1,0 +1,22 @@
+
+-----
+Test: test_buy_product.py::test_1 (call)
+Start time: 2025-09-07 16:16:46.744306
+Start name method: city_choice
+
+End time: 2025-09-07 16:16:52.141668
+End name method: city_choice
+URL: https://1click.ru/
+
+-----
+
+-----
+Test: test_buy_product.py::test_1 (call)
+Start time: 2025-09-07 16:16:52.142707
+Start name method: product_criteria
+
+End time: 2025-09-07 16:17:12.251843
+End name method: product_criteria
+URL: https://1click.ru/catalogue/phones/?F[AVAILABLE]=1&F[PRICE_MIN]=15760&F[PRICE_MAX]=80920&F[BRAND][]=Google&F[MEMORY][]=128+%D0%93%D0%91&F[MEMORY][]=256+%D0%93%D0%91&F[OS][]=Android&F[RAM][]=6+%D0%93%D0%91&F[RAM][]=8+%D0%93%D0%91&F[NFC][]=%D0%B5%D1%81%D1%82%D1%8C
+
+-----
