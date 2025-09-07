@@ -1,16 +1,19 @@
-import allure
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 import time
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from base.base_class import Base
-from utilites.logger import Logger
+
 
 
 class Product_Find(Base):
 
     url = 'https://1click.ru/catalogue/phones/'
+
+    def __init__(self, driver):
+        super().__init__(driver)
+        self.driver = driver
 
     """Поиск продукта по фильтрам"""
 
@@ -181,26 +184,25 @@ class Product_Find(Base):
 
     # Methods - метод, содержащий список Actions, представленных в виде действий данном случае осуществляется выбор города
     def product_criteria(self):
-        with allure.step("Product criteria"):
-            Logger.add_start_step(method="product_criteria")
-            self.driver.get(self.url)
-            self.driver.maximize_window()
-            self.click_catalog()
-            self.click_smartphones_category()
-            self.click_availability()
-            self.move_price_slider()
-            self.click_brands()
-            self.click_smartphone_google()
-            self.click_memory()
-            self.click_memory_value_one()
-            self.click_memory_value_two()
-            self.click_operating_system()
-            self.click_android_system()
-            self.click_operative_memory()
-            self.click_six_gb_memory()
-            self.click_eight_gb_memory()
-            self.click_get_nfc()
-            self.click_get_nfc_yes()
-            self.click_get_accept_all()
-            self.asset_word(self.get_verification_word(), "Смартфоны в Москве") #проверка на ключевую фразу
-            Logger.add_end_step(url=self.driver.current_url, method="product_criteria")
+        self.driver.get(self.url)
+        self.driver.maximize_window()
+        self.click_catalog()
+        self.click_smartphones_category()
+        self.click_availability()
+        self.move_price_slider()
+        self.click_brands()
+        self.click_smartphone_google()
+        self.click_memory()
+        self.click_memory_value_one()
+        self.click_memory_value_two()
+        self.click_operating_system()
+        self.click_android_system()
+        self.click_operative_memory()
+        self.click_six_gb_memory()
+        self.click_eight_gb_memory()
+        self.click_get_nfc()
+        self.click_get_nfc_yes()
+        self.click_get_accept_all()
+        self.asset_word(self.get_verification_word(), "Смартфоны в Москве") #проверка на ключевую фразу
+
+

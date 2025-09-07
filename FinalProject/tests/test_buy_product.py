@@ -6,6 +6,7 @@ from pages.city_page import City_Page
 from pages.product_find_page import Product_Find
 from pages.choice_and_order_page import Order_Pay
 
+"""Тест №1"""
 @allure.description("Test 1")
 def test_1(set_up, set_group): #тест с выбором города и отбором товара по критериям
     options = webdriver.ChromeOptions()
@@ -24,6 +25,7 @@ def test_1(set_up, set_group): #тест с выбором города и от�
     print("End full test")
     driver.quit()
 
+"""Тест №2"""
 @allure.description("Test 2")
 def test_2(set_up, set_group): #тест с отбором товара по критериям и заказом товара
     options = webdriver.ChromeOptions()
@@ -42,6 +44,7 @@ def test_2(set_up, set_group): #тест с отбором товара по к�
     print("End test")
     driver.quit()
 
+"""Тест №3"""
 @allure.description("Test 3")
 def test_3(set_up, set_group): #тест с выбором города, отбором товара по критериям и заказом товара
     options = webdriver.ChromeOptions()
