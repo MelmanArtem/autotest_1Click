@@ -1,8 +1,11 @@
 import time
+
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from base.base_class import Base
+from utilites.logger import Logger
 
 
 class City_Page(Base):
@@ -52,13 +55,16 @@ class City_Page(Base):
 
     # Methods - метод, содержащий список Actions, представленных в виде действий данном случае осуществляется выбор города
     def city_choice(self):
-        self.driver.get(self.url)
-        self.driver.maximize_window()
-        self.get_current_url()
-        self.click_choice_city()
-        self.input_city_name("москва")
-        self.click_confirmation_city()
-        self.asset_word(self.get_city_check(), "Москва") #Проверка, что введенный город выбрался
+        with allure.step("City choice"):
+            Logger.add_start_step(method="city_choice")
+            self.driver.get(self.url)
+            self.driver.maximize_window()
+            self.get_current_url()
+            self.click_choice_city()
+            self.input_city_name("москва")
+            self.click_confirmation_city()
+            self.asset_word(self.get_city_check(), "Москва") #Проверка, что введенный город выбрался
+            Logger.add_end_step(url=self.driver.current_url, method="city_choice")
 
 
 
