@@ -1,10 +1,9 @@
-import allure
 from selenium.webdriver.common.by import By
 import time
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from base.base_class import Base
-from utilites.logger import Logger
+
 class Order_Pay(Base):
 
     def __init__(self, driver):
@@ -103,18 +102,15 @@ class Order_Pay(Base):
 
     # Methods - метод, содержащий список Actions, представленных в виде действий данном случае осуществляется выбор города
     def choice_and_order(self):
-        with allure.step("Choice and order"):
-            Logger.add_start_step(method="choice_and_order")
-            self.click_dropdown()
-            self.click_cheap_at_first()
-            self.click_buy_button()
-            self.click_confirm_order()
-            self.asset_url("https://1click.ru/order/")  # проверка, что перешел на страницу заказа
-            self.input_my_name()
-            self.input_my_last_name()
-            self.input_number()
-            self.input_email()
-            self.input_submit_order()
-            self.asset_word(self.get_verification_word(), "Google Pixel 9a 8/128Gb Peony (JP) Sim+eSim") #проверка на ключевую фразу
-            self.get_screenshot() #скрин заказа
-            Logger.add_end_step(url=self.driver.current_url, method="choice_and_order")
+        self.click_dropdown()
+        self.click_cheap_at_first()
+        self.click_buy_button()
+        self.click_confirm_order()
+        self.asset_url("https://1click.ru/order/")  # проверка, что перешел на страницу заказа
+        self.input_my_name()
+        self.input_my_last_name()
+        self.input_number()
+        self.input_email()
+        self.input_submit_order()
+        self.asset_word(self.get_verification_word(), "Google Pixel 9a 8/128Gb Peony (JP) Sim+eSim") #проверка на ключевую фразу
+        self.get_screenshot() #скрин заказа
