@@ -23,7 +23,7 @@ class Base():
     def get_screenshot(self):
         now_date = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") #формат даты
         name_screenshot = f"Скриншот {now_date}.png" #имя файла + дата создания
-        self.driver.save_screenshot(f"C:\\Users\\Artem\\PycharmProjects\\PythonProject\\FinalProject\\screens\\{name_screenshot}") #Сохранение скрина в опред папку
+        self.driver.save_screenshot(f"../screens/{name_screenshot}") #Сохранение скрина в опред папку
         print(f"Скриншот сохранён как: {name_screenshot}")
 
     """Метод проверки по url"""
